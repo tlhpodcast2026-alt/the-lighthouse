@@ -3,6 +3,7 @@
  */
 export const site = {
   name: "The Lighthouse",
+  url: "https://lhvoice.org",
   description:
     "Clear teaching on the Kingdom of God, daily Bible study and prayer. A teaching ministry of Pastor Johnson Jayeola.",
   pastor: "Pastor Johnson Jayeola",

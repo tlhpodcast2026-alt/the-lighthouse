@@ -24,10 +24,11 @@ Built with **Next.js (App Router) + React + Tailwind CSS v4**, exported as a sta
 
 Every push to `main` redeploys automatically.
 
-### Custom domain (optional)
-1. Settings → Pages → *Custom domain* → enter e.g. `thelighthouse.org` and follow GitHub's DNS instructions.
-2. Settings → Secrets and variables → Actions → **Variables** → add `CUSTOM_DOMAIN` = `true`.
-3. Re-run the workflow. (This removes the `/the-lighthouse` path prefix.)
+### Custom domain: lhvoice.org
+The site is served at **https://lhvoice.org**. `public/CNAME` holds the domain; while that file exists the build serves from the root (no `/the-lighthouse` prefix).
+
+- GitHub: Settings → Pages → Custom domain = `lhvoice.org`, then tick **Enforce HTTPS** once the certificate is issued.
+- DNS (Network Solutions): four `A` records on `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and a `CNAME` on `www` → `tlhpodcast2026-alt.github.io`.
 
 ---
 

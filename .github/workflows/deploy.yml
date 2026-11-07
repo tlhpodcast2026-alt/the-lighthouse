@@ -25,11 +25,11 @@ jobs:
       - name: Install
         run: npm install --no-audit --no-fund
       - name: Build
-        # Project sites live at https://<user>.github.io/<repo>/ and need a base path.
-        # For a custom domain, add a repository variable CUSTOM_DOMAIN = true.
+        # A custom domain (public/CNAME present) serves from the root.
+        # Without one, project sites live at https://<user>.github.io/<repo>/ and need a base path.
         run: |
           REPO="${{ github.event.repository.name }}"
-          if [ "${{ vars.CUSTOM_DOMAIN }}" = "true" ] || [[ "$REPO" == *.github.io ]]; then
+          if [ -s public/CNAME ] || [ "${{ vars.CUSTOM_DOMAIN }}" = "true" ] || [[ "$REPO" == *.github.io ]]; then
             export NEXT_PUBLIC_BASE_PATH=""
           else
             export NEXT_PUBLIC_BASE_PATH="/$REPO"

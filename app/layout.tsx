@@ -16,9 +16,10 @@ const newsreader = Newsreader({
 const instrument = Instrument_Sans({ subsets: ["latin"], variable: "--font-instrument", display: "swap" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: { default: `${site.name} — Kingdom teaching, Bible study and prayer`, template: `%s · ${site.name}` },
   description: site.description,
-  openGraph: { title: site.name, description: site.description, type: "website", siteName: site.name },
+  openGraph: { title: site.name, description: site.description, type: "website", siteName: site.name, url: site.url },
 };
 
 export const viewport: Viewport = {
